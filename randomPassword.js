@@ -1,0 +1,18 @@
+function generateRandomPassword(length) {
+    const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+    const numberChars = '0123456789';
+    // const specialChars = '!@#$%^&*()_+-=[]{}|;:,.<>?';
+
+    const allChars = uppercaseChars + lowercaseChars + numberChars;
+    let password = '';
+
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * allChars.length);
+        password = password + allChars[randomIndex];
+    }
+    return password;
+}
+const passwordLength = 12;
+const randomPassword = generateRandomPassword(passwordLength);
+console.log("Random Password:", randomPassword);
